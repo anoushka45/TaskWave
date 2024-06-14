@@ -26,7 +26,7 @@ const Todo = () => {
     setTasks([...tasks, inputs]);
     setInputs({ title: "", body: "" });
     setShowTextarea(false);
-    toast.success("your task is added!!");
+    toast.success("Your task is added!!");
     toast.error("Task not saved, please sign up!");
   };
 
@@ -43,14 +43,13 @@ const Todo = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 to-green-500 ">
-<ToastContainer/>
-
-      <div className="bg-white p-6 rounded-lg shadow-xl w-full max-w-4xl m-4">
-        <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 p-6">
+      <ToastContainer />
+      <div className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-3xl m-4 animate-fade-in">
+        <h2 className="text-4xl flex items-center justify-center font-extrabold mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-blue-500 to-red-500">
           Add a Task
         </h2>
-        <div className="flex flex-col space-y-4">
+        <div className="flex flex-col space-y-6">
           <input
             type="text"
             onClick={show}
@@ -58,7 +57,7 @@ const Todo = () => {
             name="title"
             value={inputs.title}
             placeholder="Title"
-            className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
           />
           {showTextarea && (
             <textarea
@@ -66,20 +65,20 @@ const Todo = () => {
               value={inputs.body}
               onChange={change}
               placeholder="Body"
-              className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
             />
           )}
           <button
             onClick={submit}
-            className="mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300"
+            className="mt-6 px-4 py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition duration-300 "
           >
             Add Task
           </button>
         </div>
       </div>
 
-      <div className="todo-body mt-10 w-full max-w-5xl">
-        <div className="container mx-auto p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="todo-body mt-12 w-full max-w-5xl">
+        <div className="container mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {tasks.map((item, index) => (
             <TodoCard
               key={index}
